@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -10,13 +8,11 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-
   @override
   void initState() {
-
     super.initState();
-    
   }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);

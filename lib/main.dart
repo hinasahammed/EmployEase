@@ -1,4 +1,4 @@
-import 'package:employ_ease/splash/splash_view.dart';
+import 'package:employ_ease/getStarted/get_started_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,10 +15,13 @@ class MyApp extends StatelessWidget {
       title: 'EmployEase',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff29BD68)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xff29BD68),
+          primary: const Color(0xff24BC67),
+        ),
         useMaterial3: true,
       ),
-      home: const SplashView(),
+      home: const GetStartedView(),
     );
   }
 }
