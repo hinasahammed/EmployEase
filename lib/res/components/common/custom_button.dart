@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
         height: height,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(30),
           gradient: LinearGradient(
             colors: [
               theme.colorScheme.primary,

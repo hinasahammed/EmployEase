@@ -1,4 +1,5 @@
-import 'package:employ_ease/getStarted/get_started_view.dart';
+import 'package:employ_ease/view/getStarted/get_started_view.dart';
+import 'package:employ_ease/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const GetStartedView(),
+      home: const LoginView(),
     );
   }
 }

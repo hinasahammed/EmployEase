@@ -1,18 +1,23 @@
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CustomGetStartedView extends StatelessWidget {
   final String imageUrl;
   final String label;
   final String desc;
   final String btnText;
+  final PageController controller;
+  final void Function() onPressed;
   const CustomGetStartedView({
     super.key,
     required this.imageUrl,
     required this.label,
     required this.desc,
     required this.btnText,
+    required this.controller,
+    required this.onPressed,
   });
 
   @override
@@ -56,12 +61,12 @@ class CustomGetStartedView extends StatelessWidget {
           ),
           Container(
             width: size.width,
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: theme.colorScheme.surface,
               borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
+                topLeft: Radius.circular(25),
+                topRight: Radius.circular(25),
               ),
             ),
             child: Column(
@@ -84,43 +89,25 @@ class CustomGetStartedView extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const Gap(10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: size.width * .03,
-                      height: size.height * .02,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.red,
-                      ),
-                    ),
-                    const Gap(5),
-                    Container(
-                      width: size.width * .03,
-                      height: size.height * .02,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey.withOpacity(.5),
-                      ),
-                    ),
-                    const Gap(5),
-                    Container(
-                      width: size.width * .03,
-                      height: size.height * .02,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey.withOpacity(.5),
-                      ),
-                    ),
-                  ],
+                SmoothPageIndicator(
+                  controller: controller,
+                  count: 3,
+                  onDotClicked: (index) => controller.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 250),
+                    curve: Curves.easeInOut,
+                  ),
+                  effect: JumpingDotEffect(
+                    activeDotColor: Colors.red,
+                    dotColor: Colors.red.withOpacity(.3),
+                  ),
                 ),
                 const Gap(10),
                 CustomButton(
                   width: double.infinity,
                   height: 70,
-                  onPressed: () {},
-                  title: "Next",
+                  onPressed: onPressed,
+                  title: btnText,
                 )
               ],
             ),
