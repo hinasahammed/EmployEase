@@ -34,10 +34,7 @@ class _JobTypeViewState extends State<JobTypeView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xffE3F0E9),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.arrow_back),
-        ),
+        automaticallyImplyLeading: true,
       ),
       body: Column(
         children: [

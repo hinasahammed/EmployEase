@@ -3,7 +3,6 @@ import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/res/components/common/custom_textformfield.dart';
 import 'package:employ_ease/view/jobType/job_type_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class LoginView extends StatelessWidget {
@@ -22,7 +21,7 @@ class LoginView extends StatelessWidget {
           children: [
             Container(
               width: size.width * .25,
-              height: size.height * .12,
+              height: size.height * .1,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 gradient: const LinearGradient(

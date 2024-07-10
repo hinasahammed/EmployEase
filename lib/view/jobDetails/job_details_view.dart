@@ -14,7 +14,7 @@ class JobDetailsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffE3F0E9),
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        automaticallyImplyLeading: true,
         centerTitle: true,
         backgroundColor: const Color(0xffE3F0E9),
         actions: const [

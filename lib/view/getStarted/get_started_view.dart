@@ -26,7 +26,7 @@ class _GetStartedViewState extends State<GetStartedView> {
                 curve: Curves.easeIn,
               );
             },
-            imageUrl: "assets/images/im1-removebg-preview.webp",
+            imageUrl: ImageAsset.getStartedImage1,
             label: "Search Job Easier And More Effective",
             desc:
                 "Make your experience of searching job more easier and more effective",

@@ -1,4 +1,6 @@
 import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/res/components/common/custom_button.dart';
+import 'package:employ_ease/view/uploadCv/upload_cv_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -12,9 +14,9 @@ class SelectProfileView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffE3F0E9),
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        automaticallyImplyLeading: true,
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 229, 247, 238),
+        backgroundColor: const Color(0xffE3F0E9),
         title: Text(
           "Apply",
           style: theme.textTheme.titleLarge!.copyWith(
@@ -98,6 +100,7 @@ class SelectProfileView extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const Gap(10),
                   Row(
                     children: [
                       Stack(
@@ -328,12 +331,74 @@ class SelectProfileView extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const Gap(20),
                   Text(
                     "Cover Letter",
                     style: theme.textTheme.bodyLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  const Gap(10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Card(
+                          clipBehavior: Clip.hardEdge,
+                          child: Container(
+                            padding: const EdgeInsets.all(12),
+                            height: 80,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                            ),
+                            child: Text(
+                              "Write a Cover Letter...",
+                              style: theme.textTheme.labelLarge!.copyWith(
+                                color:
+                                    theme.colorScheme.onSurface.withOpacity(.3),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Gap(10),
+                      Card(
+                        clipBehavior: Clip.hardEdge,
+                        child: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                            ),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.file_upload_outlined,
+                                  color: theme.colorScheme.primary,
+                                ),
+                                Text(
+                                  "Upload\nPDF",
+                                  style: theme.textTheme.labelSmall!.copyWith(
+                                    color: theme.colorScheme.primary,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            )),
+                      ),
+                    ],
+                  ),
+                  const Gap(20),
+                  CustomButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const UploadCvView()));
+                    },
+                    title: "Apply Resume",
+                    width: double.infinity,
+                    height: 60,
                   ),
                 ],
               ),

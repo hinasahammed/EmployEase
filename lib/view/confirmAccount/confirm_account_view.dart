@@ -12,7 +12,7 @@ class ConfirmAccountView extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        automaticallyImplyLeading: true,
         centerTitle: true,
         title: Text(
           "Confirm New\nAccount",

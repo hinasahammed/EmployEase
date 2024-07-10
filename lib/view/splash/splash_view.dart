@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:employ_ease/view/getStarted/get_started_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -11,6 +14,13 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (ctx) => const GetStartedView()));
+      },
+    );
   }
 
   @override

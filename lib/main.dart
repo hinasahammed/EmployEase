@@ -1,4 +1,4 @@
-import 'package:employ_ease/view/login/login_view.dart';
+import 'package:employ_ease/view/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const LoginView(),
+      home: const SplashView(),
     );
   }
 }
