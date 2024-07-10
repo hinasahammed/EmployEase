@@ -1,5 +1,6 @@
 import 'package:employ_ease/assets/images/image_asset.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
+import 'package:employ_ease/view/jobReview/job_review.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -169,16 +170,24 @@ class JobDetailsView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 235, 235, 235),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(
-                          "Review",
-                          style: theme.textTheme.labelLarge!.copyWith(
-                            color: theme.colorScheme.onSurface,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => const JobReview()));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 235, 235, 235),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            "Review",
+                            style: theme.textTheme.labelLarge!.copyWith(
+                              color: theme.colorScheme.onSurface,
+                            ),
                           ),
                         ),
                       ),

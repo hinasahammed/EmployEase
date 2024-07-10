@@ -1,4 +1,3 @@
-import 'package:employ_ease/view/getStarted/get_started_view.dart';
 import 'package:employ_ease/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 

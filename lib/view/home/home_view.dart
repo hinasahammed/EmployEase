@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/icons/icon_asset.dart';
+  import 'package:employ_ease/assets/icons/icon_asset.dart';
 import 'package:employ_ease/assets/images/image_asset.dart';
 import 'package:employ_ease/view/jobDetails/job_details_view.dart';
 import 'package:flutter/material.dart';
