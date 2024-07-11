@@ -78,7 +78,7 @@ class UploadCvView extends StatelessWidget {
                 children: [
                   Text(
                     "Upload Cv",
-                    style: theme.textTheme.bodyLarge!.copyWith(
+                    style: theme.textTheme.titleLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
                       fontWeight: FontWeight.bold,
                     ),
@@ -86,7 +86,7 @@ class UploadCvView extends StatelessWidget {
                   const Gap(10),
                   Text(
                     "Upload Your Cv or Resume in Jocy to Apply the Job Vacancy",
-                    style: theme.textTheme.labelLarge!.copyWith(
+                    style: theme.textTheme.bodyLarge!.copyWith(
                       color: theme.colorScheme.onSurface.withOpacity(.4),
                     ),
                   ),
@@ -120,7 +120,7 @@ class UploadCvView extends StatelessWidget {
                               ),
                               Text(
                                 "670 kb",
-                                style: theme.textTheme.labelSmall!.copyWith(
+                                style: theme.textTheme.labelLarge!.copyWith(
                                   color: theme.colorScheme.onSurface
                                       .withOpacity(.4),
                                 ),

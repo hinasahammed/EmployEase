@@ -1,4 +1,5 @@
 import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/res/components/jobDetails/card_top_content.dart';
 import 'package:employ_ease/view/selectProfile/select_profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -28,11 +29,11 @@ class JobReview extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Gap(30),
-            Container(
+      body: Column(
+        children: [
+          const Gap(30),
+          Expanded(
+            child: Container(
               width: size.width,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -42,40 +43,9 @@ class JobReview extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: theme.colorScheme.primary.withOpacity(.3),
-                        ),
-                        child: Image.asset(
-                          ImageAsset.jobLogo,
-                          width: 70,
-                        ),
-                      ),
-                      const Gap(10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Product Designer",
-                            style: theme.textTheme.titleLarge!.copyWith(
-                              color: theme.colorScheme.onSurface,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Tokopedia",
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              color:
-                                  theme.colorScheme.onSurface.withOpacity(.5),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  const CardTopContent(
+                    jobName: "Product Designer",
+                    companyName: "Tokopedia",
                   ),
                   const Gap(10),
                   Row(
@@ -151,7 +121,7 @@ class JobReview extends StatelessWidget {
                         ),
                         child: Text(
                           "Requirement",
-                          style: theme.textTheme.labelLarge!.copyWith(
+                          style: theme.textTheme.bodyLarge!.copyWith(
                             color: theme.colorScheme.onSurface,
                           ),
                         ),
@@ -164,7 +134,7 @@ class JobReview extends StatelessWidget {
                         ),
                         child: Text(
                           "Company",
-                          style: theme.textTheme.labelLarge!.copyWith(
+                          style: theme.textTheme.bodyLarge!.copyWith(
                             color: theme.colorScheme.onSurface,
                           ),
                         ),
@@ -187,11 +157,12 @@ class JobReview extends StatelessWidget {
                   const Gap(20),
                   Text(
                     "Reviews",
-                    style: theme.textTheme.titleMedium!.copyWith(
+                    style: theme.textTheme.titleLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const Gap(10),
                   Align(
                     alignment: Alignment.center,
                     child: Container(
@@ -223,7 +194,7 @@ class JobReview extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Gap(10),
+                  const Gap(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -261,14 +232,15 @@ class JobReview extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Gap(10),
+                  const Gap(20),
                   Text(
                     "Employee Review",
-                    style: theme.textTheme.labelLarge!.copyWith(
+                    style: theme.textTheme.titleLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const Gap(10),
                   Container(
                     margin: const EdgeInsets.all(5),
                     width: size.width,
@@ -305,7 +277,7 @@ class JobReview extends StatelessWidget {
                                   ),
                                   Text(
                                     "UX Researcher",
-                                    style: theme.textTheme.labelSmall!.copyWith(
+                                    style: theme.textTheme.labelLarge!.copyWith(
                                       color: theme.colorScheme.onSurface
                                           .withOpacity(.3),
                                     ),
@@ -357,6 +329,7 @@ class JobReview extends StatelessWidget {
                       )
                     ],
                   ),
+                  const Gap(10),
                   Text(
                     "Tokopedia is an indonesian e-commerce company.",
                     style: theme.textTheme.labelLarge!.copyWith(
@@ -366,8 +339,8 @@ class JobReview extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

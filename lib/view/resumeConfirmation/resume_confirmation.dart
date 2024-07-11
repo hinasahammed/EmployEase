@@ -59,7 +59,7 @@ class ResumeConfirmation extends StatelessWidget {
                               ),
                               Text(
                                 "Ux Designer",
-                                style: theme.textTheme.labelSmall!.copyWith(
+                                style: theme.textTheme.labelLarge!.copyWith(
                                   color: theme.colorScheme.onSurface
                                       .withOpacity(.4),
                                 ),

@@ -1,5 +1,7 @@
 import 'package:employ_ease/assets/images/image_asset.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
+import 'package:employ_ease/res/components/selectProfile/profile_card.dart';
+import 'package:employ_ease/res/components/selectProfile/resume_card.dart';
 import 'package:employ_ease/view/uploadCv/upload_cv_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -25,65 +27,65 @@ class SelectProfileView extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: theme.colorScheme.primary.withOpacity(.3),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: theme.colorScheme.primary.withOpacity(.3),
+                  ),
+                  child: Image.asset(
+                    ImageAsset.jobLogo,
+                    width: 60,
+                  ),
+                ),
+                const Gap(10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Tokopedia",
+                      style: theme.textTheme.labelLarge!.copyWith(
+                        color: theme.colorScheme.onSurface.withOpacity(.4),
+                      ),
                     ),
-                    child: Image.asset(
-                      ImageAsset.jobLogo,
-                      width: 60,
+                    Text(
+                      "Product Designer",
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        color: theme.colorScheme.onSurface,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const Gap(10),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Tokopedia",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(.4),
-                        ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "Onsite Jobs",
+                      style: theme.textTheme.labelLarge!.copyWith(
+                        color: theme.colorScheme.onSurface.withOpacity(.4),
                       ),
-                      Text(
-                        "Product Designer",
-                        style: theme.textTheme.labelLarge!.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    ),
+                    Text(
+                      "\$11k/Mo",
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        color: theme.colorScheme.onSurface,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        "Onsite Jobs",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(.4),
-                        ),
-                      ),
-                      Text(
-                        "\$11k/Mo",
-                        style: theme.textTheme.labelLarge!.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            Container(
+          ),
+          Expanded(
+            child: Container(
               width: size.width,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -95,113 +97,24 @@ class SelectProfileView extends StatelessWidget {
                 children: [
                   Text(
                     "Select a Profile",
-                    style: theme.textTheme.bodyLarge!.copyWith(
+                    style: theme.textTheme.titleLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const Gap(10),
-                  Row(
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Stack(
-                        children: [
-                          Card(
-                            clipBehavior: Clip.hardEdge,
-                            child: Container(
-                              padding: const EdgeInsets.all(12),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                              ),
-                              child: Column(
-                                children: [
-                                  const CircleAvatar(
-                                    radius: 50,
-                                    backgroundImage:
-                                        AssetImage(ImageAsset.profile),
-                                  ),
-                                  Text(
-                                    "Dhe pinnem",
-                                    style: theme.textTheme.bodyLarge!.copyWith(
-                                      color: theme.colorScheme.onSurface,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Product Designer",
-                                    style: theme.textTheme.labelLarge!.copyWith(
-                                      color: theme.colorScheme.onSurface
-                                          .withOpacity(.3),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            top: 10,
-                            right: 10,
-                            child: Container(
-                              padding: const EdgeInsets.all(1),
-                              decoration: BoxDecoration(
-                                color: theme.colorScheme.primary,
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.check,
-                                color: theme.colorScheme.onPrimary,
-                              ),
-                            ),
-                          )
-                        ],
+                      ProfileCard(
+                        userName: "Dhe pinnem",
+                        jobName: "Product Designer",
+                        isChecked: true,
                       ),
-                      Stack(
-                        children: [
-                          Card(
-                            clipBehavior: Clip.hardEdge,
-                            child: Container(
-                              padding: const EdgeInsets.all(12),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                              ),
-                              child: Column(
-                                children: [
-                                  const CircleAvatar(
-                                    radius: 50,
-                                    backgroundImage:
-                                        AssetImage(ImageAsset.profile),
-                                  ),
-                                  Text(
-                                    "Dhe pinnem",
-                                    style: theme.textTheme.bodyLarge!.copyWith(
-                                      color: theme.colorScheme.onSurface,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Product Designer",
-                                    style: theme.textTheme.labelLarge!.copyWith(
-                                      color: theme.colorScheme.onSurface
-                                          .withOpacity(.3),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            top: 10,
-                            right: 10,
-                            child: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                    color: theme.colorScheme.onSurface),
-                              ),
-                            ),
-                          )
-                        ],
+                      ProfileCard(
+                        userName: "Dhe pinnem",
+                        jobName: "Product Designer",
+                        isChecked: false,
                       ),
                     ],
                   ),
@@ -211,7 +124,7 @@ class SelectProfileView extends StatelessWidget {
                     children: [
                       Text(
                         "Select a Resume",
-                        style: theme.textTheme.bodyLarge!.copyWith(
+                        style: theme.textTheme.titleLarge!.copyWith(
                           color: theme.colorScheme.onSurface,
                           fontWeight: FontWeight.bold,
                         ),
@@ -230,104 +143,18 @@ class SelectProfileView extends StatelessWidget {
                     ],
                   ),
                   const Gap(10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Card(
-                        clipBehavior: Clip.hardEdge,
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(1),
-                                decoration: BoxDecoration(
-                                  color: theme.colorScheme.primary,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  Icons.check,
-                                  color: theme.colorScheme.onPrimary,
-                                ),
-                              ),
-                              const Gap(10),
-                              Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                      color: Colors.deepOrange,
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Text(
-                                      "Ux Designer",
-                                      style:
-                                          theme.textTheme.labelSmall!.copyWith(
-                                        color: theme.colorScheme.onPrimary,
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    "Pinnen Njan",
-                                    style: theme.textTheme.labelLarge!.copyWith(
-                                      color: theme.colorScheme.onSurface,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                      ResumeCard(
+                        jobName: "Ux Designer",
+                        userName: "Dhe pinnem",
+                        isChecked: true,
                       ),
-                      Card(
-                        clipBehavior: Clip.hardEdge,
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                      color: theme.colorScheme.onSurface),
-                                ),
-                              ),
-                              const Gap(10),
-                              Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                      color: theme.colorScheme.primary,
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Text(
-                                      "Product Designer",
-                                      style:
-                                          theme.textTheme.labelSmall!.copyWith(
-                                        color: theme.colorScheme.onPrimary,
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    "Ithum Njan",
-                                    style: theme.textTheme.labelLarge!.copyWith(
-                                      color: theme.colorScheme.onSurface,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                      ResumeCard(
+                        jobName: "Product Designer",
+                        userName: "Ithum njan",
+                        isChecked: false,
                       ),
                     ],
                   ),
@@ -388,7 +215,7 @@ class SelectProfileView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Gap(20),
+                  const Expanded(child: SizedBox()),
                   CustomButton(
                     onPressed: () {
                       Navigator.push(
@@ -403,8 +230,8 @@ class SelectProfileView extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

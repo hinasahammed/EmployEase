@@ -1,5 +1,6 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
+import 'package:employ_ease/res/components/jobDetails/card_top_content.dart';
+import 'package:employ_ease/res/components/jobDetails/what_you_will_do.dart';
 import 'package:employ_ease/view/jobReview/job_review.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -29,11 +30,11 @@ class JobDetailsView extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Gap(30),
-            Container(
+      body: Column(
+        children: [
+          const Gap(30),
+          Expanded(
+            child: Container(
               width: size.width,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -43,40 +44,9 @@ class JobDetailsView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: theme.colorScheme.primary.withOpacity(.3),
-                        ),
-                        child: Image.asset(
-                          ImageAsset.jobLogo,
-                          width: 70,
-                        ),
-                      ),
-                      const Gap(10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Product Designer",
-                            style: theme.textTheme.titleLarge!.copyWith(
-                              color: theme.colorScheme.onSurface,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Tokopedia",
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              color:
-                                  theme.colorScheme.onSurface.withOpacity(.5),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  const CardTopContent(
+                    jobName: "Product Designer",
+                    companyName: "Tokopedia",
                   ),
                   const Gap(10),
                   Row(
@@ -152,7 +122,7 @@ class JobDetailsView extends StatelessWidget {
                         ),
                         child: Text(
                           "Requirement",
-                          style: theme.textTheme.labelLarge!.copyWith(
+                          style: theme.textTheme.bodyLarge!.copyWith(
                             color: theme.colorScheme.onPrimary,
                           ),
                         ),
@@ -165,7 +135,7 @@ class JobDetailsView extends StatelessWidget {
                         ),
                         child: Text(
                           "Company",
-                          style: theme.textTheme.labelLarge!.copyWith(
+                          style: theme.textTheme.bodyLarge!.copyWith(
                             color: theme.colorScheme.onSurface,
                           ),
                         ),
@@ -185,7 +155,7 @@ class JobDetailsView extends StatelessWidget {
                           ),
                           child: Text(
                             "Review",
-                            style: theme.textTheme.labelLarge!.copyWith(
+                            style: theme.textTheme.bodyLarge!.copyWith(
                               color: theme.colorScheme.onSurface,
                             ),
                           ),
@@ -196,10 +166,10 @@ class JobDetailsView extends StatelessWidget {
                   const Gap(20),
                   Text(
                     "About The Role",
-                    style: theme.textTheme.labelLarge!.copyWith(
+                    style: theme.textTheme.titleLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
+                      fontWeight: FontWeight.bold,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                   const Gap(10),
                   Text(
@@ -211,8 +181,9 @@ class JobDetailsView extends StatelessWidget {
                   const Gap(10),
                   Text(
                     "What You Will Do",
-                    style: theme.textTheme.labelLarge!.copyWith(
+                    style: theme.textTheme.titleLarge!.copyWith(
                       color: theme.colorScheme.onSurface,
+                      fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -223,30 +194,12 @@ class JobDetailsView extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       separatorBuilder: (context, index) => const Gap(10),
                       itemCount: 4,
-                      itemBuilder: (context, index) => Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: theme.colorScheme.primary.withOpacity(.2),
-                            ),
-                            child: Icon(
-                              Icons.check,
-                              color: theme.colorScheme.primary,
-                            ),
-                          ),
-                          const Gap(20),
-                          Text(
-                            "Expert inUi/Ux Designer",
-                            style: theme.textTheme.labelLarge!.copyWith(
-                              color: theme.colorScheme.onSurface,
-                            ),
-                          ),
-                        ],
+                      itemBuilder: (context, index) => const WhatYouWillDo(
+                        text: "Expert inn UI/UX Designer",
                       ),
                     ),
                   ),
+                  const Expanded(child: SizedBox()),
                   const CustomButton(
                     title: "Apply This Job",
                     width: double.infinity,
@@ -254,9 +207,9 @@ class JobDetailsView extends StatelessWidget {
                   ),
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
