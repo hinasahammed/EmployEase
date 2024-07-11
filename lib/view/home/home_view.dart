@@ -88,7 +88,7 @@ class _HomeViewState extends State<HomeView> {
         height: 70,
         icons: const [
           Icons.home_filled,
-          Icons.document_scanner,
+          Icons.document_scanner, 
           Icons.messenger,
           Icons.person,
         ],
