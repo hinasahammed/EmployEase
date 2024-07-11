@@ -1,7 +1,8 @@
 import 'package:employ_ease/assets/icons/icon_asset.dart';
 import 'package:employ_ease/assets/images/image_asset.dart';
 import 'package:employ_ease/res/components/common/tab_bar_contents.dart';
-import 'package:employ_ease/res/components/filter.dart';
+import 'package:employ_ease/res/components/filter/filter.dart';
+import 'package:employ_ease/res/components/searchJob/job_details_card.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -36,7 +37,7 @@ class _SearchJobViewState extends State<SearchJobView> {
           ),
         ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,256 +105,20 @@ class _SearchJobViewState extends State<SearchJobView> {
               ),
             ),
             const Gap(20),
-            Expanded(
-              child: ListView.separated(
-                itemCount: 3,
-                separatorBuilder: (context, index) => const Gap(10),
-                itemBuilder: (context, index) => Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: theme.colorScheme.primary.withOpacity(.3),
-                            ),
-                            child: Image.asset(
-                              ImageAsset.jobLogo,
-                              width: 30,
-                            ),
-                          ),
-                          const Gap(10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Product Designer",
-                                style: theme.textTheme.bodyLarge!.copyWith(
-                                  color: theme.colorScheme.onSurface,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "Tokopedia",
-                                style: theme.textTheme.labelLarge!.copyWith(
-                                  color: theme.colorScheme.onSurface
-                                      .withOpacity(.5),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                          const Icon(Icons.bookmark_outline)
-                        ],
-                      ),
-                      const Gap(20),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.location_on_outlined,
-                            color: theme.colorScheme.onSurface.withOpacity(.4),
-                          ),
-                          const Gap(5),
-                          Text(
-                            "Jakartha",
-                            style: theme.textTheme.labelSmall!.copyWith(
-                              color:
-                                  theme.colorScheme.onSurface.withOpacity(.4),
-                            ),
-                          ),
-                          const Spacer(),
-                          Text(
-                            "Rp 12 Jt",
-                            style: theme.textTheme.labelSmall!.copyWith(
-                              color: theme.colorScheme.onSurface,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "/bin",
-                            style: theme.textTheme.labelSmall!.copyWith(
-                              color:
-                                  theme.colorScheme.onSurface.withOpacity(.4),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+            ListView.separated(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 3,
+              separatorBuilder: (context, index) => const Gap(10),
+              itemBuilder: (context, index) => const JobDetailsCard(
+                imageUrl: ImageAsset.jobLogo,
+                jobName: "Product Designer",
+                compnayName: "Tokopedia",
+                location: "Jakartha",
+                address: "Rp 12 Jt",
               ),
             ),
             const Gap(20),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: theme.colorScheme.primary.withOpacity(.3),
-                        ),
-                        child: Image.network(
-                          "https://www.zestbrains.com/assets/images/ui-ux-design/ui-ux-design.png",
-                          width: 30,
-                        ),
-                      ),
-                      const Gap(10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Product Designer",
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              color: theme.colorScheme.onSurface,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Tokopedia",
-                            style: theme.textTheme.labelLarge!.copyWith(
-                              color:
-                                  theme.colorScheme.onSurface.withOpacity(.5),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.bookmark_outline)
-                    ],
-                  ),
-                  const Gap(20),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.location_on_outlined,
-                        color: theme.colorScheme.onSurface.withOpacity(.4),
-                      ),
-                      const Gap(5),
-                      Text(
-                        "Jakartha",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(.4),
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        "Rp 12 Jt",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "/bin",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(.4),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-            const Gap(20),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: theme.colorScheme.primary.withOpacity(.3),
-                        ),
-                        child: Image.network(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNZjy7NAyAyKVnHZBXhnVueqC9dtpGHZK-0w&s",
-                          width: 30,
-                        ),
-                      ),
-                      const Gap(10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Product Designer",
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              color: theme.colorScheme.onSurface,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Tokopedia",
-                            style: theme.textTheme.labelLarge!.copyWith(
-                              color:
-                                  theme.colorScheme.onSurface.withOpacity(.5),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.bookmark_outline)
-                    ],
-                  ),
-                  const Gap(20),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.location_on_outlined,
-                        color: theme.colorScheme.onSurface.withOpacity(.4),
-                      ),
-                      const Gap(5),
-                      Text(
-                        "Jakartha",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(.4),
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        "Rp 12 Jt",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "/bin",
-                        style: theme.textTheme.labelSmall!.copyWith(
-                          color: theme.colorScheme.onSurface.withOpacity(.4),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
           ],
         ),
       ),

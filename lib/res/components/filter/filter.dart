@@ -1,4 +1,6 @@
 import 'package:employ_ease/res/components/common/custom_button.dart';
+import 'package:employ_ease/res/components/filter/items_card.dart';
+import 'package:employ_ease/res/components/filter/salary_card.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -33,10 +35,7 @@ class Filter extends StatelessWidget {
           const Gap(10),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Spacer(),
-              const Spacer(),
               Text(
                 "Set Filters",
                 style: theme.textTheme.titleLarge!.copyWith(
@@ -44,7 +43,7 @@ class Filter extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Spacer(),
+              const Gap(70),
               Text(
                 "Reset",
                 style: theme.textTheme.labelLarge!.copyWith(
@@ -55,180 +54,68 @@ class Filter extends StatelessWidget {
           ),
           Text(
             "Job Category",
-            style: theme.textTheme.labelLarge!.copyWith(
+            style: theme.textTheme.bodyLarge!.copyWith(
               color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const Gap(10),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white,
-              border: Border.all(
-                color: theme.colorScheme.onSurface.withOpacity(.3),
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.shopping_bag_outlined,
-                  color: theme.colorScheme.onSurface,
-                ),
-                const Gap(10),
-                Text(
-                  "Product Design",
-                  style: theme.textTheme.labelLarge!.copyWith(
-                    color: theme.colorScheme.onSurface,
-                  ),
-                ),
-                const Spacer(),
-                const Icon(Icons.keyboard_arrow_down)
-              ],
-            ),
+          const ItemsCard(
+            title: "Product Design",
           ),
           const Gap(10),
           Text(
             "Sub Category",
-            style: theme.textTheme.labelLarge!.copyWith(
+            style: theme.textTheme.bodyLarge!.copyWith(
               color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const Gap(10),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white,
-              border: Border.all(
-                color: theme.colorScheme.onSurface.withOpacity(.3),
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.shopping_bag_outlined,
-                  color: theme.colorScheme.onSurface,
-                ),
-                const Gap(10),
-                Text(
-                  "UI/UX Designer",
-                  style: theme.textTheme.labelLarge!.copyWith(
-                    color: theme.colorScheme.onSurface,
-                  ),
-                ),
-                const Spacer(),
-                const Icon(Icons.keyboard_arrow_down)
-              ],
-            ),
+          const ItemsCard(
+            title: "UI/UX Designer",
           ),
           const Gap(10),
           Text(
             "Location",
-            style: theme.textTheme.labelLarge!.copyWith(
+            style: theme.textTheme.bodyLarge!.copyWith(
               color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const Gap(10),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white,
-              border: Border.all(
-                color: theme.colorScheme.onSurface.withOpacity(.3),
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.location_on_outlined,
-                  color: theme.colorScheme.onSurface,
-                ),
-                const Gap(10),
-                Text(
-                  "Jakartha, Indonesia",
-                  style: theme.textTheme.labelLarge!.copyWith(
-                    color: theme.colorScheme.onSurface,
-                  ),
-                ),
-                const Spacer(),
-                const Icon(Icons.keyboard_arrow_down)
-              ],
-            ),
+          const ItemsCard(
+            title: "Jakartha, Indonesia",
           ),
           const Gap(10),
           Text(
             "Salary",
-            style: theme.textTheme.labelLarge!.copyWith(
+            style: theme.textTheme.bodyLarge!.copyWith(
               color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const Gap(10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Text(
-                      "\$800",
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        color: theme.colorScheme.onSurface,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const Gap(5),
-                  Text(
-                    "Min Salary",
-                    style: theme.textTheme.labelSmall!.copyWith(
-                      color: theme.colorScheme.onSurface.withOpacity(.3),
-                    ),
-                  )
-                ],
+              SalaryCard(
+                width: size.width / 3,
+                salaryType: "Min Salary",
               ),
               const Gap(10),
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Text(
-                      "\$2400",
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        color: theme.colorScheme.onSurface,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const Gap(5),
-                  Text(
-                    "MAx Salary",
-                    style: theme.textTheme.labelSmall!.copyWith(
-                      color: theme.colorScheme.onSurface.withOpacity(.3),
-                    ),
-                  )
-                ],
+              SalaryCard(
+                width: size.width / 2,
+                salaryType: "Max Salary",
               ),
             ],
           ),
           const Gap(10),
           Text(
             "Job Type",
-            style: theme.textTheme.labelLarge!.copyWith(
+            style: theme.textTheme.bodyLarge!.copyWith(
               color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const Gap(10),
@@ -283,7 +170,7 @@ class Filter extends StatelessWidget {
               ),
             ],
           ),
-          const Gap(10),
+          const Gap(20),
           Row(
             children: [
               Expanded(

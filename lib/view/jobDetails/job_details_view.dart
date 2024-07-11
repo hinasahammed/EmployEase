@@ -30,11 +30,11 @@ class JobDetailsView extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          const Gap(30),
-          Expanded(
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Gap(30),
+            Container(
               width: size.width,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -199,7 +199,7 @@ class JobDetailsView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Expanded(child: SizedBox()),
+                  const Gap(20),
                   const CustomButton(
                     title: "Apply This Job",
                     width: double.infinity,
@@ -207,9 +207,9 @@ class JobDetailsView extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

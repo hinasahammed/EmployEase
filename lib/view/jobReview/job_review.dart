@@ -14,7 +14,7 @@ class JobReview extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffE3F0E9),
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        automaticallyImplyLeading: true,
         centerTitle: true,
         backgroundColor: const Color(0xffE3F0E9),
         actions: const [
@@ -29,11 +29,11 @@ class JobReview extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          const Gap(30),
-          Expanded(
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Gap(30),
+            Container(
               width: size.width,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -339,8 +339,8 @@ class JobReview extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

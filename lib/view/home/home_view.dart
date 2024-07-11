@@ -1,3 +1,4 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:employ_ease/res/components/common/search_field_and_filter.dart';
 import 'package:employ_ease/res/components/common/tab_bar_contents.dart';
 import 'package:employ_ease/res/components/homeView/job_card.dart';
@@ -27,7 +28,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: const Color(0xffE3F0E9),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +50,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               const Gap(20),
               SizedBox(
-                height: size.height * .23,
+                height: size.height * .25,
                 child: ListView.separated(
                   separatorBuilder: (context, index) => const Gap(10),
                   itemCount: 2,
@@ -66,37 +67,37 @@ class _HomeViewState extends State<HomeView> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
-                height: size.height * .26,
-                child: ListView.builder(
-                  itemCount: 3,
-                  itemBuilder: (context, index) => const PopularJobCard(
-                    imageUrl:
-                        "https://m.media-amazon.com/images/I/51rttY7a+9L.png",
-                    title: "Product Designer",
-                    subTitle: "Spotify, Jakarta",
-                    btnText: "Apply This Job",
-                  ),
+              ListView.builder(
+                itemCount: 3,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) => const PopularJobCard(
+                  imageUrl:
+                      "https://m.media-amazon.com/images/I/51rttY7a+9L.png",
+                  title: "Product Designer",
+                  subTitle: "Spotify, Jakarta",
+                  btnText: "Apply This Job",
                 ),
               ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (value) {},
-        selectedItemColor: theme.colorScheme.primary,
-        unselectedItemColor: theme.colorScheme.onSurface,
-        iconSize: 30,
-        type: BottomNavigationBarType.shifting,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ''),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.document_scanner), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.messenger), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        activeColor: theme.colorScheme.primary,
+        height: 70,
+        icons: const [
+          Icons.home_filled,
+          Icons.document_scanner,
+          Icons.messenger,
+          Icons.person,
         ],
+        activeIndex: 0,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.verySmoothEdge,
+        leftCornerRadius: 32,
+        rightCornerRadius: 32,
+        onTap: (index) {},
       ),
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
@@ -107,8 +108,7 @@ class _HomeViewState extends State<HomeView> {
           color: theme.colorScheme.onPrimary,
         ),
       ),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

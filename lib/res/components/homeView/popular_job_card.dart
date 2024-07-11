@@ -10,15 +10,15 @@ class PopularJobCard extends StatelessWidget {
       {super.key,
       required this.imageUrl,
       required this.title,
-      required this.subTitle, required this.btnText});
+      required this.subTitle,
+      required this.btnText});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
     final theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.all(5),
-      width: size.width,
+      width: double.infinity,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -54,7 +54,7 @@ class PopularJobCard extends StatelessWidget {
               ),
             ],
           ),
-          const Gap(10),
+          const Gap(5),
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(

@@ -1,5 +1,5 @@
 import 'package:employ_ease/assets/images/image_asset.dart';
-import 'package:employ_ease/res/components/custom_get_started_view.dart';
+import 'package:employ_ease/res/components/getstarted/custom_get_started_view.dart';
 import 'package:employ_ease/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class JobCard extends StatelessWidget {
+class JobDetailsCard extends StatelessWidget {
   final String imageUrl;
   final String jobName;
   final String compnayName;
   final String location;
   final String address;
-  const JobCard(
+  const JobDetailsCard(
       {super.key,
       required this.imageUrl,
       required this.jobName,
