@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:employ_ease/view/getStarted/get_started_view.dart';
+import 'package:employ_ease/view/login/login_view.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -17,10 +19,25 @@ class _SplashViewState extends State<SplashView> {
     Timer(
       const Duration(seconds: 3),
       () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (ctx) => const GetStartedView()));
+        checkOnboard();
       },
     );
+  }
+
+  void checkOnboard() async {
+    final pref = await SharedPreferences.getInstance();
+    var val = pref.getBool("onboardVal") ?? false;
+    if (val) {
+      if (mounted) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (ctx) => const LoginView()));
+      }
+    } else {
+      if (mounted) {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (ctx) => const GetStartedView()));
+      }
+    }
   }
 
   @override

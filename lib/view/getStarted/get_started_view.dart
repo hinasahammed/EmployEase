@@ -2,6 +2,7 @@ import 'package:employ_ease/assets/images/image_asset.dart';
 import 'package:employ_ease/res/components/getstarted/custom_get_started_view.dart';
 import 'package:employ_ease/view/login/login_view.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class GetStartedView extends StatefulWidget {
   const GetStartedView({super.key});
@@ -48,12 +49,7 @@ class _GetStartedViewState extends State<GetStartedView> {
           ),
           CustomGetStartedView(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => const LoginView(),
-                ),
-              );
+              coveredOnboard();
             },
             imageUrl: ImageAsset.getStartedImage3,
             label: "Help Find The Right Job With Your Desire",
@@ -64,5 +60,18 @@ class _GetStartedViewState extends State<GetStartedView> {
         ],
       ),
     );
+  }
+
+  void coveredOnboard() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setBool("onboardVal", true);
+    if (mounted) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (ctx) => const LoginView(),
+        ),
+      );
+    }
   }
 }
