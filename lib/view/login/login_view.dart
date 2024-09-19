@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/icons/icon_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/res/components/common/custom_textformfield.dart';
 import 'package:employ_ease/view/jobType/job_type_view.dart';
@@ -117,17 +117,15 @@ class LoginView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    IconAsset.google,
+                  Assets.icons.googleIcon.image(
                     width: 50,
                     height: 50,
                   ),
                   const Gap(30),
-                  Image.asset(
-                    IconAsset.facebook,
+                  Assets.icons.facebookIcon.image(
                     width: 50,
                     height: 50,
-                  ),
+                  )
                 ],
               )
             ],

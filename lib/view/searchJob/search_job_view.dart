@@ -1,5 +1,4 @@
-import 'package:employ_ease/assets/icons/icon_asset.dart';
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/tab_bar_contents.dart';
 import 'package:employ_ease/res/components/filter/filter.dart';
 import 'package:employ_ease/res/components/searchJob/job_details_card.dart';
@@ -75,8 +74,7 @@ class _SearchJobViewState extends State<SearchJobView> {
                       color: theme.colorScheme.primary.withOpacity(.2),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Image.asset(
-                      IconAsset.filter,
+                    child: Assets.icons.filter.image(
                       width: 30,
                       color: theme.colorScheme.primary,
                     ),
@@ -110,8 +108,8 @@ class _SearchJobViewState extends State<SearchJobView> {
               shrinkWrap: true,
               itemCount: 3,
               separatorBuilder: (context, index) => const Gap(10),
-              itemBuilder: (context, index) => const JobDetailsCard(
-                imageUrl: ImageAsset.jobLogo,
+              itemBuilder: (context, index) => JobDetailsCard(
+                imageUrl: Assets.images.jlogo.keyName,
                 jobName: "Product Designer",
                 compnayName: "Tokopedia",
                 location: "Jakartha",

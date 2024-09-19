@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/view/home/home_view.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +16,9 @@ class CreatedAccountView extends StatelessWidget {
         width: size.width,
         height: size.height,
         padding: const EdgeInsets.all(16),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(ImageAsset.bg),
+            image: Assets.images.background.provider(),
             fit: BoxFit.cover,
           ),
         ),

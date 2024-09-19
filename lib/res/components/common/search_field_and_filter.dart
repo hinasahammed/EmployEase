@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/icons/icon_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -33,8 +33,7 @@ class SearchFieldAndFilter extends StatelessWidget {
             color: theme.colorScheme.primary.withOpacity(.2),
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Image.asset(
-            IconAsset.filter,
+          child: Assets.icons.filter.image(
             width: 30,
             color: theme.colorScheme.primary,
           ),

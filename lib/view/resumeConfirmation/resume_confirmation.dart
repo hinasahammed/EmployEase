@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/view/searchJob/search_job_view.dart';
 import 'package:flutter/material.dart';
@@ -42,9 +42,9 @@ class ResumeConfirmation extends StatelessWidget {
                       ),
                       child: Row(
                         children: [
-                          const CircleAvatar(
+                           CircleAvatar(
                             radius: 30,
-                            backgroundImage: AssetImage(ImageAsset.profile),
+                            backgroundImage: Assets.images.profile.provider(),
                           ),
                           const Gap(10),
                           Column(

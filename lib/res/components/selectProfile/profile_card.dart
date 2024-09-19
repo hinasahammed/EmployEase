@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
@@ -25,9 +25,9 @@ class ProfileCard extends StatelessWidget {
             ),
             child: Column(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage(ImageAsset.profile),
+                  backgroundImage: Assets.images.profile.provider(),
                 ),
                 Text(
                   userName,

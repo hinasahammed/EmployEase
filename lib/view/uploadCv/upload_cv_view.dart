@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/view/resumeConfirmation/resume_confirmation.dart';
 import 'package:flutter/material.dart';
@@ -37,8 +37,7 @@ class UploadCvView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: theme.colorScheme.primary.withOpacity(.3),
                   ),
-                  child: Image.asset(
-                    ImageAsset.jobLogo,
+                  child: Assets.images.jlogo.image(
                     width: 70,
                   ),
                 ),

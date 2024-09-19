@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class TopAppBar extends StatelessWidget {
@@ -19,9 +19,9 @@ class TopAppBar extends StatelessWidget {
             ),
           ),
         ),
-        const CircleAvatar(
+        CircleAvatar(
           radius: 30,
-          backgroundImage: AssetImage(ImageAsset.profile),
+          backgroundImage: Assets.images.profile.provider(),
         ),
       ],
     );

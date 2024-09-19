@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/res/components/selectProfile/profile_card.dart';
 import 'package:employ_ease/res/components/selectProfile/resume_card.dart';
@@ -40,8 +40,7 @@ class SelectProfileView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: theme.colorScheme.primary.withOpacity(.3),
                   ),
-                  child: Image.asset(
-                    ImageAsset.jobLogo,
+                  child: Assets.images.jlogo.image(
                     width: 60,
                   ),
                 ),

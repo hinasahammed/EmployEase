@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/jobDetails/card_top_content.dart';
 import 'package:employ_ease/view/selectProfile/select_profile_view.dart';
 import 'package:flutter/material.dart';
@@ -262,8 +262,9 @@ class JobReview extends StatelessWidget {
                           },
                           child: Row(
                             children: [
-                              const CircleAvatar(
-                                backgroundImage: AssetImage(ImageAsset.profile),
+                              CircleAvatar(
+                                backgroundImage:
+                                    Assets.images.profile.provider(),
                               ),
                               const Gap(10),
                               Column(

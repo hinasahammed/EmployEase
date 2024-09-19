@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/icons/icon_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/res/components/common/custom_button.dart';
 import 'package:employ_ease/res/components/jobType/item_containers.dart';
 import 'package:employ_ease/view/confirmAccount/confirm_account_view.dart';
@@ -22,11 +22,11 @@ class _JobTypeViewState extends State<JobTypeView> {
   ];
 
   List icons = [
-    IconAsset.designer,
-    IconAsset.developer,
-    IconAsset.analyst,
-    IconAsset.phsycho,
-    IconAsset.developer,
+    Assets.icons.designer.keyName,
+    Assets.icons.developer.keyName,
+    Assets.icons.analyst.keyName,
+    Assets.icons.phsycologist.keyName,
+    Assets.icons.developer.keyName,
   ];
   @override
   Widget build(BuildContext context) {

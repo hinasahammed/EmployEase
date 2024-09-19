@@ -1,4 +1,4 @@
-import 'package:employ_ease/assets/images/image_asset.dart';
+import 'package:employ_ease/gen/assets.gen.dart';
 import 'package:employ_ease/view/jobDetails/job_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -22,7 +22,7 @@ class JobCard extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
               image: index == 0
-                  ? const AssetImage(ImageAsset.bg)
+                  ? Assets.images.background.provider()
                   : const NetworkImage(
                       "https://i.pinimg.com/564x/90/70/69/907069fa2ccf55c17c3f898c41faca05.jpg"),
               fit: BoxFit.cover,
@@ -34,8 +34,8 @@ class JobCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CircleAvatar(
-                  backgroundImage: AssetImage(ImageAsset.jobLogo),
+                CircleAvatar(
+                  backgroundImage: Assets.images.jlogo.provider(),
                   radius: 25,
                 ),
                 const Gap(10),
